@@ -30,24 +30,33 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
-
-
+-- competitive programming
+keymap.set("n", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
+keymap.set("i", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 
 keymap.set(
 	"n",
 	"<F9>",
 	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt <CR>',
-	{ desc = "Compile and run C++ code and DON'T save output" }
-)
+	{ desc = "Compile, run C++ code and DON'T save output" }
+) -- F9 to compile and run, but we don't use an output.txt file
 keymap.set(
 	"i",
 	"<F9>",
 	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt <CR>',
-	{ desc = "Compile and run C++ code and DON'T save output" }
-)
+	{ desc = "Compile, run C++ code and DON'T save output" }
+) -- F9 to compile and run, but we don't use an output.txt file
 
+keymap.set(
+	"n",
+	"<F10>",
+	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>',
+	{ desc = "Compile and run C++ code and save output" }
+) -- F10 to compile and run, but we use an output.txt file
 
-keymap.set('n', '<F10>', '<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>', { desc = 'Compile and run C++ code and save output' })
-
-keymap.set('i', '<F10>', '<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>', { desc = 'Compile and run C++ code and save output' })
-
+keymap.set(
+	"i",
+	"<F10>",
+	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>',
+	{ desc = "Compile and run C++ code and save output" }
+) -- F10 to compile and run, but we use an output.txt file
