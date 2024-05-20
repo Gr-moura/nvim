@@ -31,6 +31,28 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- competitive programming
+local opts = { noremap = true, silent = true, desc = "Make current file equal to hey.cpp" }
+
+keymap.set("n", "<F1>", ":lua MakeCurrentFileEqualToHeyCpp()<CR>", opts)
+
+function MakeCurrentFileEqualToHeyCpp()
+	local current_buffer = vim.api.nvim_get_current_buf()
+	local hey_cpp_path = "Templates/Competitive.cpp"
+
+	-- Read the contents of hey.cpp
+	local file = io.open(hey_cpp_path, "r")
+	if not file then
+		print("Could not open " .. hey_cpp_path)
+		return
+	end
+
+	local content = file:read("*a")
+	file:close()
+
+	-- Replace the current buffer content with the contents of hey.cpp
+	vim.api.nvim_buf_set_lines(current_buffer, 0, -1, false, vim.split(content, "\n"))
+end
+
 keymap.set("n", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 keymap.set("i", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 
