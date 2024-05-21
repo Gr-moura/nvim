@@ -37,6 +37,7 @@ return {
 				"emmet_ls",
 				"prismals",
 				"pyright",
+				"clangd",
 			},
 		})
 
@@ -49,6 +50,7 @@ return {
 				"clang-format", -- c/cpp formatter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
+				"codelldb", -- debugger
 			},
 		})
 	end,
