@@ -20,8 +20,8 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				c = { "astyle" },
-				cpp = { "astyle" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
