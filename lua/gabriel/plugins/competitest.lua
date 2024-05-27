@@ -25,7 +25,7 @@ return {
 				},
 			},
 			template_file = {
-				cpp = "~/Desktop/CP_Problems/First_Semester/Solves/template.cpp",
+				cpp = "~/Desktop/Templates/Template.cpp",
 			},
 		})
 	end,
