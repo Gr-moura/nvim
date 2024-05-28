@@ -35,8 +35,8 @@ return {
 
 	keys = {
 		{ "<leader>cp", "<cmd>CompetiTest receive problem<CR>", desc = "CompetitTest receive problem" },
-		{ "<leader>cc", "<cmd>CompetiTest receive contest<CR>", desc = "CompetitTest receive contest" },
-		{ "<leader>ck", "<cmd>CompetiTest run<CR>", desc = "CompetitTest run test cases" },
+		{ "<leader>ce", "<cmd>CompetiTest receive contest<CR>", desc = "CompetitTest receive event" },
+		{ "<leader>cr", "<cmd>CompetiTest run<CR>", desc = "CompetitTest run test cases" },
 		{ "<leader>cs", "<cmd>CompetiTest show_ui<CR>", desc = "CompetitTest show ui" },
 		{ "<leader>ci", set_input_file, desc = "Set input.txt file" },
 	},
