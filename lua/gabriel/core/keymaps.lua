@@ -34,7 +34,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 keymap.set("i", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 
-keymap.set("n", "<leader>cc", "<ESC>")
+keymap.set("n", "<leader>ca", "<cmd>%y+<CR>", { desc = "Copy all" }) -- copy whole file
 
 keymap.set(
 	"n",
