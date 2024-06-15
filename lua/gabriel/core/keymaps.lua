@@ -30,6 +30,18 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
+-- floaterm
+keymap.set(
+	"n",
+	"<leader>ot",
+	"<cmd>FloatermNew --height=0.5 --width=0.8 --wintype=float --title=Gabriel <CR>",
+	{ desc = "Open terminal" }
+) --  open terminal
+
+keymap.set("t", "<F1>", "<cmd>FloatermToggle<CR>", { desc = "Hide terminal" }) --  hide terminal
+keymap.set("n", "<F1>", "<cmd>FloatermToggle<CR>", { desc = "Show terminal" }) --  show terminal
+keymap.set({ "t", "n" }, "<F2>", "<cmd>FloatermKill<CR>", { desc = "Kill terminal" }) -- kill terminal
+
 -- competitive programming
 keymap.set("n", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 keymap.set("i", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
