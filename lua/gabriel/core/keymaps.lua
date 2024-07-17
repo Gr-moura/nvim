@@ -42,6 +42,14 @@ keymap.set("t", "<F1>", "<cmd>FloatermToggle<CR>", { desc = "Hide terminal" }) -
 keymap.set("n", "<F1>", "<cmd>FloatermToggle<CR>", { desc = "Show terminal" }) --  show terminal
 keymap.set({ "t", "n" }, "<F2>", "<cmd>FloatermKill<CR>", { desc = "Kill terminal" }) -- kill terminal
 
+-- UFMG
+keymap.set(
+	{ "n", "i" },
+	"<F12>",
+	'<ESC> :w<CR> :!gcc -fsanitize=address -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
+	{ desc = "Compile and run C code" }
+)
+
 -- competitive programming
 keymap.set("n", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 keymap.set("i", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
@@ -54,6 +62,7 @@ keymap.set(
 	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt <CR>',
 	{ desc = "Compile, run C++ code and DON'T save output" }
 ) -- F9 to compile and run, but we don't use an output.txt file
+
 keymap.set(
 	"i",
 	"<F9>",
