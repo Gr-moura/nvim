@@ -16,7 +16,7 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = false -- disable line wrapping
 
 -- search settings
-opt.ignorecase = true -- ignore case when searching
+opt.ignorecase = false -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- cursor line
