@@ -8,7 +8,7 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>ls", '<cmd>lua require("flash").jump()<cr>', { desc = "Flash jump" })
+		keymap.set("n", "<leader>lj", '<cmd>lua require("flash").jump()<cr>', { desc = "Flash jump" })
 		keymap.set("n", "<leader>lt", '<cmd>lua require("flash").treesitter()<cr>', { desc = "Flash Treesitter" })
 		keymap.set(
 			"n",
