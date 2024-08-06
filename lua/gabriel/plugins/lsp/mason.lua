@@ -49,6 +49,7 @@ return {
 				"clang-format", -- c/cpp formatter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
+				"cpplint", -- c/cpp linter
 			},
 		})
 	end,
