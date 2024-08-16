@@ -25,6 +25,14 @@ return {
 			end,
 		})
 
+		-- Hide diagnostics when entering insert mode
+		vim.api.nvim_create_autocmd("InsertEnter", {
+			group = lint_augroup,
+			callback = function()
+				vim.diagnostic.reset()
+			end,
+		})
+
 		vim.keymap.set("n", "<leader>l", function()
 			lint.try_lint()
 		end)
