@@ -9,6 +9,14 @@ local keymap = vim.keymap -- for conciseness
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+-- Have j and k navigate visual lines rather than logical ones
+keymap.set("n", "j", "gj")
+keymap.set("n", "k", "gk")
+
+-- I like using H and L for beginning/end of line
+keymap.set("n", "H", "^", { desc = "Go to beginning of line" })
+keymap.set("n", "L", "$", { desc = "Go to end of line" })
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- delete single character without copying into register
@@ -83,3 +91,13 @@ keymap.set(
 	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>',
 	{ desc = "Compile and run C++ code and save output" }
 ) -- F10 to compile and run, but we use an output.txt file
+
+local function compile_and_open_the_pdf()
+	vim.api.nvim_command("VimtexCompile")
+	vim.api.nvim_command("VimtexView")
+end
+
+--keymap.set("n", "<leader>lo", compile_and_open_the_pdf, {desc = "Compile tex file and open the pdf"})
+--keymap.set({ "<leader>lc", "<cmd>VimtexCompile<CR>", desc = "Compile tex file" })
+--keymap.set({ "<leader>ls", "<cmd>VimtexCompileOutput<CR>", desc = "Show output of the tex compiler" })
+--keymap.set({ "<leader>lv", "<cmd>VimtexView<CR>", desc = "View tex pdf" })
