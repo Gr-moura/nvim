@@ -61,7 +61,7 @@ keymap.set(
 keymap.set(
 	{ "n", "i" },
 	"<F11>",
-	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++11 -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
+	'<ESC> :w<CR> :!g++ -std=c++11 -fsanitize=address -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
 	{ desc = "Compile and run C++ code" }
 )
 
