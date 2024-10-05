@@ -58,44 +58,31 @@ keymap.set(
 	{ desc = "Compile and run C code" }
 )
 
+keymap.set(
+	{ "n", "i" },
+	"<F11>",
+	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++11 -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
+	{ desc = "Compile and run C++ code" }
+)
+
 -- competitive programming
-keymap.set("n", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
-keymap.set("i", "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
+keymap.set({ "n", "i" }, "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 
 keymap.set("n", "<leader>ca", "<cmd>%y+<CR>", { desc = "Copy all" }) -- copy whole file
 
-keymap.set(
-	"n",
-	"<F9>",
-	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt <CR>',
-	{ desc = "Compile, run C++ code and DON'T save output" }
-) -- F9 to compile and run, but we don't use an output.txt file
-
-keymap.set(
-	"i",
-	"<F9>",
-	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt <CR>',
-	{ desc = "Compile, run C++ code and DON'T save output" }
-) -- F9 to compile and run, but we don't use an output.txt file
-
-keymap.set(
-	"n",
-	"<F10>",
-	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>',
-	{ desc = "Compile and run C++ code and save output" }
-) -- F10 to compile and run, but we use an output.txt file
-
-keymap.set(
-	"i",
-	"<F10>",
-	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>',
-	{ desc = "Compile and run C++ code and save output" }
-) -- F10 to compile and run, but we use an output.txt file
-
-local function compile_and_open_the_pdf()
-	vim.api.nvim_command("VimtexCompile")
-	vim.api.nvim_command("VimtexView")
-end
+-- keymap.set(
+-- 	"n",
+-- 	"<F10>",
+-- 	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>',
+-- 	{ desc = "Compile and run C++ code and save output" }
+-- ) -- F10 to compile and run, but we use an output.txt file
+--
+-- keymap.set(
+-- 	"i",
+-- 	"<F10>",
+-- 	'<ESC> :w<CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o out "%" && ./out < ~/Desktop/CP_Problems/First_Semester/Contests/input.txt > ~/Desktop/CP_Problems/First_Semester/Contests/output.txt <CR>',
+-- 	{ desc = "Compile and run C++ code and save output" }
+-- ) -- F10 to compile and run, but we use an output.txt file
 
 --keymap.set("n", "<leader>lo", compile_and_open_the_pdf, {desc = "Compile tex file and open the pdf"})
 --keymap.set({ "<leader>lc", "<cmd>VimtexCompile<CR>", desc = "Compile tex file" })
