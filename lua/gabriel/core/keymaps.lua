@@ -54,14 +54,14 @@ keymap.set({ "t", "n" }, "<F2>", "<cmd>FloatermKill<CR>", { desc = "Kill termina
 keymap.set(
 	{ "n", "i" },
 	"<F12>",
-	'<ESC> :w<CR> :!gcc -fsanitize=address -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
+	'<ESC> :w<CR> :!gcc -fsanitize=address -pedantic -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
 	{ desc = "Compile and run C code" }
 )
 
 keymap.set(
 	{ "n", "i" },
 	"<F11>",
-	'<ESC> :w<CR> :!g++ -std=c++11 -fsanitize=address -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
+	'<ESC> :w<CR> :!g++ -std=c++11 -pedantic -fsanitize=address -Wall -Wextra -Wshadow -DONPC -O2 -o zzz "%" && ./zzz <CR>',
 	{ desc = "Compile and run C++ code" }
 )
 
@@ -69,6 +69,34 @@ keymap.set(
 keymap.set({ "n", "i" }, "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 
 keymap.set("n", "<leader>ca", "<cmd>%y+<CR>", { desc = "Copy all" }) -- copy whole file
+
+-- refactoring
+keymap.set("x", "<leader>re", function()
+	require("refactoring").refactor("Extract Function")
+end, { desc = "Extract Function" })
+keymap.set("x", "<leader>rf", function()
+	require("refactoring").refactor("Extract Function To File")
+end, { desc = "Extract Function to File" })
+-- Extract function supports only visual mode
+keymap.set("x", "<leader>rv", function()
+	require("refactoring").refactor("Extract Variable")
+end, { desc = "Extract Variable" })
+-- Extract variable supports only visual mode
+keymap.set("n", "<leader>rI", function()
+	require("refactoring").refactor("Inline Function")
+end, { desc = "Inline Function" })
+-- Inline func supports only normal
+keymap.set({ "n", "x" }, "<leader>ri", function()
+	require("refactoring").refactor("Inline Variable")
+end, { desc = "Inline Variable" })
+-- Inline var supports both normal and visual mode
+keymap.set("x", "<leader>rb", function()
+	require("refactoring").refactor("Extract Block")
+end, { desc = "Extract Block" })
+keymap.set("n", "<leader>rbf", function()
+	require("refactoring").refactor("Extract Block To File")
+end, { desc = "Extract Block to File" })
+-- Extract block supports only normal mode
 
 -- keymap.set(
 -- 	"n",
