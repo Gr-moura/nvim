@@ -69,6 +69,7 @@ keymap.set(
 keymap.set({ "n", "i" }, "<F3>", "<cmd>:w<CR>", { desc = "Save" }) --  save
 
 keymap.set("n", "<leader>ca", "<cmd>%y+<CR>", { desc = "Copy all" }) -- copy whole file
+keymap.set("n", "<leader>ch", "<cmd>2,$y+<CR>", { desc = "Copy without header" }) -- copy from the second line onward
 
 -- refactoring
 keymap.set("x", "<leader>re", function()
