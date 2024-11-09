@@ -14,7 +14,7 @@ return {
 			python = { "pylint" },
 			cpp = { "cppcheck" },
 			c = { "cppcheck" },
-			makefile = { "checkmake" },
+			make = { "checkmake" },
 		}
 
 		--local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
