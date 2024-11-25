@@ -15,6 +15,7 @@ return {
 			cpp = { "cppcheck" },
 			c = { "cppcheck" },
 			make = { "checkmake" },
+			yaml = { "yamllint" },
 		}
 
 		--local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

@@ -6,6 +6,9 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
+				c = { "clang-format" },
+				cpp = { "clang-format" },
+				yaml = { "yamlfmt" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
@@ -14,14 +17,11 @@ return {
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
-				yaml = { "prettier" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				c = { "clang-format" },
-				cpp = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
