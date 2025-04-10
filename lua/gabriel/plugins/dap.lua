@@ -30,6 +30,20 @@ return {
 			name = "lldb",
 		}
 
+		-- C Debugging Configuration
+		dap.configurations.c = {
+			{
+				name = "Launch C Program",
+				type = "lldb",
+				request = "launch",
+				program = "${workspaceFolder}/bin", -- Adjust path
+				cwd = "${workspaceFolder}",
+				stopOnEntry = true,
+				args = {},
+				runInTerminal = false,
+			},
+		}
+
 		-- C++ Debugging Configuration
 		dap.configurations.cpp = {
 			{
@@ -41,6 +55,24 @@ return {
 				stopOnEntry = false,
 				args = {},
 				runInTerminal = false,
+			},
+		}
+
+		-- Python Debug Adapter (debugpy)
+		dap.adapters.python = {
+			type = "executable",
+			command = "python3",
+			args = { "-m", "debugpy.adapter" },
+		}
+
+		-- Python Debugging Configuration
+		dap.configurations.python = {
+			{
+				type = "python",
+				request = "launch",
+				name = "Launch file",
+				program = "${file}", -- Debug the current file
+				pythonPath = "python3",
 			},
 		}
 	end,
